@@ -1,0 +1,34 @@
+St. Lawrence Guild Website Overview
+Purpose
+The website serves as an attendance tracking and record-keeping system for the servers of the St. Lawrence Guild. It allows administrators and members to register daily attendance and view historical attendance records.
+
+Key Features
+Homepage (index.html):
+
+A welcome message and links to the registration and records pages.
+Styled with deep blue and gold colors to represent the guild.
+Registration Page (register.html):
+
+A form where members can enter their name, surname, and attendance status (Present, Absent, Late).
+The form saves the attendance data to local storage when submitted.
+Records Page (records.html):
+
+Displays all recorded attendance entries in a table format.
+Allows the administrator to view each entry, showing the member's name, surname, attendance status, and the date.
+Includes functionality to delete individual records.
+User Flow
+Register Attendance:
+
+A member visits the registration page.
+They fill out their name, surname, and select their attendance status (P, A, or L).
+Upon submitting, the entry is saved to local storage.
+View Records:
+
+An administrator or member visits the records page.
+They can see a table of all attendance entries.
+The administrator can delete specific records if needed.
+Technical Details
+HTML and CSS:
+
+The site is built with HTML for structure and CSS for styling.
+Uses a deep blue background with gold accents to represent the guild's colors.
