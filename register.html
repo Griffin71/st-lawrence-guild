@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Attendance - St. Lawrence Guild</title>
+    <link rel="icon" href="C:\Church\public\ch_Y0b_icon.ico" type="ch_Y0b_icon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #00274D; /* Deep blue background */
+            color: white;
+        }
+        .content {
+            margin: 20px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label, select, input {
+            margin-bottom: 10px;
+            display: block;
+        }
+        button {
+            background-color: #FFCC33; /* Gold button */
+            border: none;
+            padding: 10px 20px;
+            color: #00274D; /* Deep blue text */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #FFB732; /* Slightly darker gold on hover */
+        }
+    </style>
+</head>
+<body>
+		<div class="header">
+        <h1>Register Book For St. Francis.</h1><img src = "images.jpg">
+    </div>
+    <div class="content">
+        <h1>Register Attendance</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" required>
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="P">Present</option>
+                <option value="A">Absent</option>
+                <option value="L">Late</option>
+            </select>
+            <button type="button" onclick="saveRegistration()">Submit</button>
+        </form>
+    </div>
+    <script>
+        function saveRegistration() {
+            const name = document.getElementById('name').value;
+            const surname = document.getElementById('surname').value;
+            const status = document.getElementById('status').value;
+            const date = new Date();
+            const record = {
+                name: name,
+                surname: surname,
+                status: status,
+                date: date.toISOString()
+            };
+            
+            let records = JSON.parse(localStorage.getItem('records')) || [];
+            records.push(record);
+            localStorage.setItem('records', JSON.stringify(records));
+            
+            alert('Registration saved!');
+        }
+    </script>
+</body>
+</html>
